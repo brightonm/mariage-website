@@ -208,17 +208,19 @@ button:disabled { opacity: .6; cursor: wait; }
   .choices label { font-size: 1.5rem; }
   .form { gap: 24px; }
 
-  /* accueil : photo en haut, texte sur fond sombre en dessous */
-  body[data-page="accueil"] { background: #2b1228; }
-  body[data-page="accueil"] .bg { height: 60vh; object-position: 40% 55%; }
+  /* accueil : photo plein écran, texte en haut sur le mur, bouton en bas (voiles légers) */
+  body[data-page="accueil"] .bg { object-position: 16% 50%; }
   .hero .script { display: none; }
-  .hero.active { background: linear-gradient(0deg, #2b1228 0%, #2b1228 50%, rgba(43, 18, 40, 0) 74%); padding-bottom: 28px; }
+  .hero.active { justify-content: flex-start; padding: 104px 16px 26px;
+    background: linear-gradient(180deg, rgba(30, 10, 22, .5) 0%, rgba(30, 10, 22, 0) 38%, rgba(30, 10, 22, 0) 72%, rgba(30, 10, 22, .5) 100%); }
   .names { font-size: clamp(2.6rem, 13vw, 4rem); }
-  .heroline { margin-top: 16px; gap: 6px 22px; }
+  .heroline { margin-top: 14px; gap: 4px 22px; }
   .when { font-size: .95rem; }
   .where { font-size: .85rem; }
+  .countdown { margin-top: 6px; }
   .countdown b { font-size: 1.5rem; }
-  .hero .quote { font-size: .95rem; margin: 18px 0 16px; }
+  .hero .quote { display: none; }
+  .hero > div:last-child { margin-top: auto; }
 
   /* dessins : deux par page, en bas, discrets, sans recouvrir les titres */
   body[data-page] .deco img { display: none; }
@@ -231,5 +233,8 @@ button:disabled { opacity: .6; cursor: wait; }
   body[data-page="liste"] .deco .d-glass-orange { display: block; top: auto; right: 4vw; bottom: 2vh; height: 15vh; }
   body[data-page="repondre"] .deco .d-dove { display: block; top: auto; left: 2vw; bottom: 1vh; width: 36vw; }
   body[data-page="repondre"] .deco .d-bouquet { display: block; top: auto; right: 2vw; bottom: 1vh; width: 32vw; }
+}
+@media (max-width: 640px) and (max-height: 720px) {
+  .countdown { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
