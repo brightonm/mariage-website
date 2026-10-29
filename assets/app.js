@@ -70,6 +70,7 @@
       if (!panels.some(p => p.id === id)) id = 'accueil';
       panels.forEach(p => p.classList.toggle('active', p.id === id));
       tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
+      document.body.dataset.page = id;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     document.addEventListener('click', e => {
