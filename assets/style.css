@@ -234,6 +234,9 @@ button:disabled { opacity: .6; cursor: wait; }
   body[data-page="repondre"] .deco .d-dove { display: block; top: auto; left: 2vw; bottom: 1vh; width: 36vw; }
   body[data-page="repondre"] .deco .d-bouquet { display: block; top: auto; right: 2vw; bottom: 1vh; width: 32vw; }
 }
+@media (max-width: 640px) {
+  .foot { display: none; }
+}
 @media (max-width: 640px) and (max-height: 720px) {
   .countdown { display: none; }
 }
